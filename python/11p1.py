@@ -1,5 +1,6 @@
 import string
 
+
 def increasing_seq(n):
     for i in range(1, len(n) - 1):
         if n[i - 1] + 1 == n[i] and n[i] + 1 == n[i + 1]:
@@ -20,8 +21,10 @@ def repeating(n):
         c += s.count(i * 2)
     return c >= 2
 
+
 def password_is_okay(s):
     return increasing_seq(s) and no_banned_letters(s) and repeating(s)
+
 
 s = map(lambda x: ord(x) - ord('a'), raw_input())
 while not password_is_okay(s):
